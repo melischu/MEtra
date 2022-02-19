@@ -29,6 +29,7 @@ export default class Button {
         this.buttonProgressCheckEmpty = images.buttonProgressCheckEmpty;
         this.buttonAccept = images.buttonAccept;
         this.buttonDecline = images.buttonDecline;
+        this.buttonQ = images.buttonQ;
     }
 
     display() {
@@ -210,6 +211,18 @@ export default class Button {
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
+        
+        if (this.state === "q"){
+            noStroke();
+            image(this.buttonQ, this.s * this.x, this.s * this.y, this.s * 940, this.s * 180);
+            fill(this.textColor);
+            textAlign(CENTER);
+            textStyle(NORMAL);
+            textFont("Helvetica");
+            textSize(this.s * this.textSize);
+            text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
+        }
+
     }
 
     hitTest() {

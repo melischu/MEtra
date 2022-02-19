@@ -1,5 +1,7 @@
-export let tut1;
+export let call1;
+export let call2;
 
-function preloadImg() {
-    tut1 = loadImage("./assets/img/tut1.png");
+export function preload(){
+    call1 = createVideo("./assets/vid/call1.mp4");
+    call2 = createVideo("./assets/vid/call2.mp4");
 }

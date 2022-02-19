@@ -1,6 +1,6 @@
 import Button from "./classes/button.js";
 import Background from "./classes/background.js";
-//import { tut1 } from "./preload.js";
+import { call1, call2, preload } from "./preload.js";
 
 //creating classes
 let images = {
@@ -39,6 +39,7 @@ let images = {
     buttonProgressCheckEmpty: loadImage("./assets/img/buttonProgressCheckEmpty.png"),
     buttonAccept: loadImage("./assets/img/buttonAccept.png"),
     buttonDecline: loadImage("./assets/img/buttonDecline.png"),
+    buttonQ: loadImage("./assets/img/buttonQ.png"),
 }
 
 let background = new Background(0, 0, 1, "null", images);
@@ -62,10 +63,15 @@ let buttonCheck1 = new Button(900, 680, 150, 150, 1, 50, color(255, 255, 255), "
 let buttonCheck2 = new Button(900, 880, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
 let buttonCheck3 = new Button(900, 1080, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
 let buttonCheck4 = new Button(900, 1280, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
+let buttonQ1 = new Button(120, 1900, 940, 180, 1, 50, color(0, 0, 0), "", "q", images);
+let buttonQ2 = new Button(120, 2100, 940, 180, 1, 50, color(0, 0, 0), "", "q", images);
+
 
 let globalState = "tutorial1";
 
 //functions
+preload();
+
 function tutorialScreen(){
     fill(245);
     rect(0, 0, 1170, 2532);
@@ -168,9 +174,38 @@ function phoneMenu4Screen(){
     buttonDecline.display();
 }
 
-function phoneCallScreen(){
-    fill(245);
+function phoneCall1Screen(){
+    fill(10);
     rect(0, 0, 1170, 2532);
+
+    if (frameCount > 450){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("Wie geht es dir heute?", 585, 1800);
+    }
+}
+
+function phoneCall2Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount > 450){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("Wie geht es dir heute?", 585, 1800);
+    }
 }
 
 function progressScreen(){
@@ -186,14 +221,6 @@ function progressScreen(){
     buttonCheck2.display();
     buttonCheck3.display();
     buttonCheck4.display();
-}
-
-function settingsScreen(){
-    fill(245);
-    rect(0, 0, 1170, 2532);
-    background.display();
-    buttonBack.display();
-    button1.display();
 }
 
 function settingsScreen(){
@@ -374,21 +401,25 @@ function mouseClicked(){
     //art1 -> phoneMenu1
     if (button2.hitTest() && globalState === "art1" && frameCount > 5) {
         globalState = "phoneMenu1";
+        frameCount = 0;
     }
 
     //art2 -> phoneMenu2
     if (button2.hitTest() && globalState === "art2" && frameCount > 5) {
         globalState = "phoneMenu2";
+        frameCount = 0;
     }
 
     //art3 -> phoneMenu3
     if (button2.hitTest() && globalState === "art3" && frameCount > 5) {
         globalState = "phoneMenu3";
+        frameCount = 0;
     }
 
     //art4 -> phoneMenu4
     if (button2.hitTest() && globalState === "art4" && frameCount > 5) {
         globalState = "phoneMenu4";
+        frameCount = 0;
     }
 
     //phoneMenu1 -> art1
@@ -438,6 +469,31 @@ function mouseClicked(){
         button2.y = 2000;
         button2.state = "call";
     }    
+
+    //VIDEO BUTTON
+    //phoneMenu1 -> call1
+    if (buttonAccept.hitTest() && globalState === "phoneMenu1" && frameCount > 5) {
+        globalState = "call1";
+        frameCount = 0;
+        
+        call1.play();
+        
+        buttonQ1.text = "Gut";
+        buttonQ2.text = "Schlecht";
+    }
+
+    //call1 -> Q1 -> call2
+    if (buttonQ1.hitTest() && globalState === "call1" && frameCount > 450) {
+        globalState = "call2";
+        frameCount = 0;
+        
+        call2.play();
+        
+        buttonQ1.text = "Gut";
+        buttonQ2.text = "Schlecht";
+    }
+
+
 
     //art1 -> art2
     if (buttonTransparent1.hitTest() && globalState === "art1" && frameCount > 5) {
@@ -514,6 +570,7 @@ function mouseClicked(){
     //home -> progress
     if (button2.hitTest() && globalState === "home" && frameCount > 5) {
         globalState = "progress";
+        frameCount = 0;
     }
 
     //progress -> home
@@ -645,6 +702,24 @@ function draw(){
     if(globalState === "phoneMenu4"){
         phoneMenu4Screen();
         background.state = "phoneMenu4";
+    }
+
+    if(globalState === "call1"){
+        phoneCall1Screen();
+        background.state = "phoneMenu1";
+
+        if (frameCount < 450){
+            image(call1, 0, 226, 1170, 2080);
+        }
+    }
+
+    if(globalState === "call2"){
+        phoneCall2Screen();
+        background.state = "phoneMenu1";
+
+        if (frameCount < 450){
+            image(call2, 0, 226, 1170, 2080);
+        }
     }
 
     if(globalState === "settings"){
