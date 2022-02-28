@@ -15,6 +15,7 @@ export default class Button {
         this.buttonPerson = images.buttonPerson;
         this.buttonSettings = images.buttonSettings;
         this.buttonBack = images.buttonBack;
+        this.buttonLock = images.buttonLock;
         this.buttonS1 = images.buttonS1;
         this.buttonS2 = images.buttonS2;
         this.buttonS3 = images.buttonS3;
@@ -88,15 +89,15 @@ export default class Button {
             text(this.text, this.s * this.x + this.s * this.w / 1.75, this.s * this.y + this.s * this.h / 2 + 15);
         }
 
-        if (this.state === "back"){
+        if (this.state === "lock"){
             noStroke();
-            image(this.buttonBack, this.s * this.x, this.s * this.y, this.s * 340, this.s * 150);
+            image(this.buttonLock, this.s * this.x, this.s * this.y, this.s * 940, this.s * 180);
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
             textFont("Helvetica");
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 1.75, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
 
         if (this.state === "transparent"){

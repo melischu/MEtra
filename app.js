@@ -25,6 +25,7 @@ let images = {
     buttonPerson: loadImage("./assets/img/buttonPerson.png"),
     buttonSettings: loadImage("./assets/img/buttonSettings.png"),
     buttonBack: loadImage("./assets/img/buttonBack.png"),
+    buttonLock: loadImage("./assets/img/buttonLock.png"),
     buttonS1: loadImage("./assets/img/buttonS1.png"),
     buttonS2: loadImage("./assets/img/buttonS2.png"),
     buttonS3: loadImage("./assets/img/buttonS3.png"),
@@ -47,6 +48,7 @@ let button1 = new Button(120, 1900, 940, 180, 1, 50, color(255, 255, 255), "Lore
 let button2 = new Button(120, 1900, 940, 180, 1, 50, color(255, 255, 255), "Lorem Ipsum", "default", images);
 let button3 = new Button(120, 1900, 940, 180, 1, 50, color(255, 255, 255), "Lorem Ipsum", "default", images);
 let buttonBack = new Button(120, 170, 340, 150, 1, 50, color(255, 255, 255), "Zurück", "back", images);
+let buttonLock = new Button(120, 2000, 940, 180, 1, 50, color(255, 255, 255), "Artefakt anrufen", "lock", images);
 let buttonS1 = new Button(900, 170, 150, 150, 1, 50, color(255, 255, 255), "", "s1", images);
 let buttonS2 = new Button(900, 170, 150, 150, 1, 50, color(255, 255, 255), "", "s2", images);
 let buttonS3 = new Button(900, 170, 150, 150, 1, 50, color(255, 255, 255), "", "s3", images);
@@ -113,7 +115,21 @@ function art2Screen(){
     buttonBack.display();
     buttonS2.display();
     button1.display();
-    button2.display();
+    
+    if(buttonCheck1.state === "pCheck"){
+        button2.display();
+    }
+
+    if(buttonCheck1.state === "pCheckEmpty"){
+        buttonLock.display();
+        fill(135, 113, 81);
+        textAlign(CENTER);
+        textStyle(NORMAL);
+        textFont("Helvetica");
+        textSize(30);
+        text("Du musst zuerst mit Artefakt 1 sprechen.", 585, 2200);
+    }
+    
     buttonTransparent1.display();
     buttonTransparent2.display();
 }
@@ -125,7 +141,21 @@ function art3Screen(){
     buttonBack.display();
     buttonS3.display();
     button1.display();
-    button2.display();
+    
+    if(buttonCheck2.state === "pCheck"){
+        button2.display();
+    }
+
+    if(buttonCheck2.state === "pCheckEmpty"){
+        buttonLock.display();
+        fill(135, 113, 81);
+        textAlign(CENTER);
+        textStyle(NORMAL);
+        textFont("Helvetica");
+        textSize(30);
+        text("Du musst zuerst mit Artefakt 2 sprechen.", 585, 2200);
+    }
+    
     buttonTransparent1.display();
     buttonTransparent2.display();
 }
@@ -137,7 +167,21 @@ function art4Screen(){
     buttonBack.display();
     buttonS4.display();
     button1.display();
-    button2.display();
+    
+    if(buttonCheck3.state === "pCheck"){
+        button2.display();
+    }
+
+    if(buttonCheck3.state === "pCheckEmpty"){
+        buttonLock.display();
+        fill(135, 113, 81);
+        textAlign(CENTER);
+        textStyle(NORMAL);
+        textFont("Helvetica");
+        textSize(30);
+        text("Du musst zuerst mit Artefakt 3 sprechen.", 585, 2200);
+    }
+    
     buttonTransparent1.display();
     buttonTransparent2.display();
 }
@@ -178,6 +222,11 @@ function phoneCall1Screen(){
     fill(10);
     rect(0, 0, 1170, 2532);
 
+
+    if (frameCount < 450){
+        image(call1, 0, 226, 1170, 2080);
+    }
+
     if (frameCount > 450){
         background.display();
         buttonQ1.display();
@@ -194,6 +243,10 @@ function phoneCall1Screen(){
 function phoneCall2Screen(){
     fill(10);
     rect(0, 0, 1170, 2532);
+
+    if (frameCount < 450){
+        image(call2, 0, 226, 1170, 2080);
+    }
 
     if (frameCount > 450){
         background.display();
@@ -405,19 +458,19 @@ function mouseClicked(){
     }
 
     //art2 -> phoneMenu2
-    if (button2.hitTest() && globalState === "art2" && frameCount > 5) {
+    if (button2.hitTest() && globalState === "art2" && buttonCheck1.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu2";
         frameCount = 0;
     }
 
     //art3 -> phoneMenu3
-    if (button2.hitTest() && globalState === "art3" && frameCount > 5) {
+    if (button2.hitTest() && globalState === "art3" && buttonCheck2.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu3";
         frameCount = 0;
     }
 
     //art4 -> phoneMenu4
-    if (button2.hitTest() && globalState === "art4" && frameCount > 5) {
+    if (button2.hitTest() && globalState === "art4" && buttonCheck3.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu4";
         frameCount = 0;
     }
@@ -434,6 +487,7 @@ function mouseClicked(){
         button2.state = "call";
     }
 
+    //LOCK
     //phoneMenu2 -> art2
     if (buttonDecline.hitTest() && globalState === "phoneMenu2" && frameCount > 5) {
         globalState = "art2";
@@ -470,6 +524,12 @@ function mouseClicked(){
         button2.state = "call";
     }    
 
+
+
+
+
+
+
     //VIDEO BUTTON
     //phoneMenu1 -> call1
     if (buttonAccept.hitTest() && globalState === "phoneMenu1" && frameCount > 5) {
@@ -492,6 +552,30 @@ function mouseClicked(){
         buttonQ1.text = "Gut";
         buttonQ2.text = "Schlecht";
     }
+
+
+
+
+
+
+
+
+    
+    /*
+    if (buttonQ2.hitTest() && globalState === "call1" && frameCount > 450) {
+        globalState = "progress";
+        frameCount = 0;
+        buttonCheck1.state = "pCheck";
+    }
+    */
+
+
+
+
+
+
+
+
 
 
 
@@ -707,19 +791,11 @@ function draw(){
     if(globalState === "call1"){
         phoneCall1Screen();
         background.state = "phoneMenu1";
-
-        if (frameCount < 450){
-            image(call1, 0, 226, 1170, 2080);
-        }
     }
 
     if(globalState === "call2"){
         phoneCall2Screen();
         background.state = "phoneMenu1";
-
-        if (frameCount < 450){
-            image(call2, 0, 226, 1170, 2080);
-        }
     }
 
     if(globalState === "settings"){
