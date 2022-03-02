@@ -221,7 +221,7 @@ export default class Button {
             textStyle(NORMAL);
             textFont("Helvetica");
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 10);
         }
 
     }

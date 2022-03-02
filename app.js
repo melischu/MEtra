@@ -1,6 +1,41 @@
 import Button from "./classes/button.js";
 import Background from "./classes/background.js";
-import { call1, call2, preload } from "./preload.js";
+import { 
+    VideoOM1, 
+    VideoOM2, 
+    VideoOM3, 
+    VideoOM4, 
+    VideoOM5, 
+    VideoOM6, 
+    VideoOM7, 
+    VideoOM8, 
+    VideoOM9, 
+    VideoOM10, 
+    VideoOM11, 
+    VideoOM12, 
+    VideoOM13, 
+    VideoOM14, 
+    VideoOM15, 
+    VideoOM16, 
+    VideoOM17, 
+    VideoOM18, 
+    VideoOM19, 
+    VideoOM20, 
+    VideoOM21, 
+    VideoOM22, 
+    VideoOM23, 
+    VideoOM24, 
+    VideoOM25, 
+    VideoOM26, 
+    VideoOM27, 
+    VideoOM28,
+    VideoOM29, 
+    VideoOM30, 
+    VideoOM31, 
+    VideoOM32,  
+    VideoOMX,
+    preload 
+} from "./preload.js";
 
 //creating classes
 let images = {
@@ -65,11 +100,12 @@ let buttonCheck1 = new Button(900, 680, 150, 150, 1, 50, color(255, 255, 255), "
 let buttonCheck2 = new Button(900, 880, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
 let buttonCheck3 = new Button(900, 1080, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
 let buttonCheck4 = new Button(900, 1280, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
-let buttonQ1 = new Button(120, 1900, 940, 180, 1, 50, color(0, 0, 0), "", "q", images);
-let buttonQ2 = new Button(120, 2100, 940, 180, 1, 50, color(0, 0, 0), "", "q", images);
-
+let buttonQ1 = new Button(120, 1700, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
+let buttonQ2 = new Button(120, 1900, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
+let buttonQ3 = new Button(120, 2100, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
 
 let globalState = "tutorial1";
+let combineState = "null";
 
 //functions
 preload();
@@ -218,16 +254,47 @@ function phoneMenu4Screen(){
     buttonDecline.display();
 }
 
-function phoneCall1Screen(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function VideoOM1Screen(){
     fill(10);
     rect(0, 0, 1170, 2532);
 
-
-    if (frameCount < 450){
-        image(call1, 0, 226, 1170, 2080);
+//Hier richtiges Video rein image(VideoRICHTIG)
+//2x Framecount hoch aufs richtige, hier 810 - Video länge mal 30
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
     }
 
-    if (frameCount > 450){
+    if (frameCount > 60){
         background.display();
         buttonQ1.display();
         buttonQ2.display();
@@ -236,19 +303,233 @@ function phoneCall1Screen(){
         textStyle(BOLD);
         textFont("Helvetica");
         textSize(50);
-        text("Wie geht es dir heute?", 585, 1800);
+        text("VideoOM1Screen", 585, 1600);
     }
+
+    //"Deine Antwort:" in text überall einsetzen
 }
 
-function phoneCall2Screen(){
+function VideoOM2_3_4Screen(){
     fill(10);
     rect(0, 0, 1170, 2532);
 
-    if (frameCount < 450){
-        image(call2, 0, 226, 1170, 2080);
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
     }
 
-    if (frameCount > 450){
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM2_3_4Screen:", 585, 1600);
+    }
+}
+
+function VideoOM3_4Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM3_4Screen:", 585, 1600);
+    }
+}
+
+function VideoOM5_7Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM5_7Screen:", 585, 1600);
+    }
+}
+
+function VideoOM6_7Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM6_7Screen:", 585, 1600);
+    }
+}
+
+function VideoOM8_10Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM8_10Screen:", 585, 1600);
+    }
+}
+
+function VideoOM9_10Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM9_10Screen:", 585, 1600);
+    }
+}
+
+function VideoOM11_13Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM11_13Screen:", 585, 1600);
+    }
+}
+
+function VideoOM12_13Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM12_13Screen:", 585, 1600);
+    }
+}
+
+function VideoOM14Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM14Screen:", 585, 1600);
+    }
+}
+
+function VideoOM15Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM15Screen:", 585, 1600);
+    }
+}
+
+function VideoOM16Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
         background.display();
         buttonQ1.display();
         buttonQ2.display();
@@ -257,9 +538,315 @@ function phoneCall2Screen(){
         textStyle(BOLD);
         textFont("Helvetica");
         textSize(50);
-        text("Wie geht es dir heute?", 585, 1800);
+        text("VideoOM16Screen:", 585, 1600);
     }
 }
+
+function VideoOM17_19Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM17_19Screen:", 585, 1600);
+    }
+}
+
+function VideoOM18_19Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM18_19Screen:", 585, 1600);
+    }
+}
+
+function VideoOM20_22Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM20_22Screen:", 585, 1600);
+    }
+}
+
+function VideoOM21_22Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM21_22Screen:", 585, 1600);
+    }
+}
+
+function VideoOM23Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM23Screen:", 585, 1600);
+    }
+}
+
+function VideoOM23_24Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM23_24Screen:", 585, 1600);
+    }
+}
+
+function VideoOM24Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM24Screen:", 585, 1600);
+    }
+}
+
+function VideoOM11_26Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM11_26Screen:", 585, 1600);
+    }
+}
+
+function VideoOM25_26Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        buttonQ3.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM25_26Screen:", 585, 1600);
+    }
+}
+
+function VideoOM27_29Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM27_29Screen:", 585, 1600);
+    }
+}
+
+function VideoOM28_29Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        buttonQ2.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM28_29Screen:", 585, 1600);
+    }
+}
+
+function VideoOM30_32Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM30_32Screen:", 585, 1600);
+    }
+}
+
+function VideoOM31_32Screen(){
+    fill(10);
+    rect(0, 0, 1170, 2532);
+
+    if (frameCount < 60){
+        image(VideoOMX, 0, 226, 1170, 2080);
+    }
+
+    if (frameCount > 60){
+        background.display();
+        buttonQ1.display();
+        fill(255);
+        textAlign(CENTER);
+        textStyle(BOLD);
+        textFont("Helvetica");
+        textSize(50);
+        text("VideoOM31_32Screen:", 585, 1600);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function progressScreen(){
     fill(245);
@@ -530,27 +1117,201 @@ function mouseClicked(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //VIDEO BUTTON
-    //phoneMenu1 -> call1
+    //phoneMenu1 -> VideoOM1
     if (buttonAccept.hitTest() && globalState === "phoneMenu1" && frameCount > 5) {
-        globalState = "call1";
+        globalState = "VideoOM1";
         frameCount = 0;
         
-        call1.play();
+        VideoOMX.play();
         
-        buttonQ1.text = "Gut";
-        buttonQ2.text = "Schlecht";
+        buttonQ1.text = "Oh ja, erzähl mir mehr über dich!";
+        buttonQ2.text = "Was genau sind schrifttragende Artefakte?";
     }
 
-    //call1 -> Q1 -> call2
-    if (buttonQ1.hitTest() && globalState === "call1" && frameCount > 450) {
-        globalState = "call2";
+    //VideoOM1 -> Q1 -> VideoOM3_4
+    if (buttonQ1.hitTest() && globalState === "VideoOM1" && frameCount > 60) {
+        globalState = "VideoOM3_4";
         frameCount = 0;
         
-        call2.play();
+        VideoOMX.play();
+
+        buttonQ1.text = "1555";
+        buttonQ2.text = "1955";
+        buttonQ3.text = "1755";
+
+        combineState = "VideoOM3_4&VideoOM2_3_4";
+    }
+
+    //VideoOM1 -> Q2 -> VideoOM2_3_4
+    if (buttonQ2.hitTest() && globalState === "VideoOM1" && frameCount > 60) {
+        globalState = "VideoOM2_3_4";
+        frameCount = 0;
         
-        buttonQ1.text = "Gut";
-        buttonQ2.text = "Schlecht";
+        VideoOMX.play();
+        
+        buttonQ1.text = "1555";
+        buttonQ2.text = "1955";
+        buttonQ3.text = "1755";
+
+        combineState = "VideoOM3_4&VideoOM2_3_4";
+    }
+
+
+
+
+
+    //VideoOM3_4 & VideoOM2_3_4 -> Q1 -> VideoOM6_7
+    if (buttonQ1.hitTest() && combineState === "VideoOM3_4&VideoOM2_3_4" && frameCount > 5) {
+        globalState = "VideoOM6_7";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Latein";
+        buttonQ2.text = "Italienisch";
+        buttonQ3.text = "Griechisch";
+
+        combineState = "VideoOM6_7&VideoOM5_7";
+    }
+
+    //VideoOM3_4 & VideoOM2_3_4 -> Q2 -> VideoOM5_7
+    if (buttonQ2.hitTest() && combineState === "VideoOM3_4&VideoOM2_3_4" && frameCount > 5) {
+        globalState = "VideoOM5_7";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Latein";
+        buttonQ2.text = "Italienisch";
+        buttonQ3.text = "Griechisch";
+
+        combineState = "VideoOM6_7&VideoOM5_7";
+    }
+
+        //VideoOM3_4 & VideoOM2_3_4 -> Q3 -> VideoOM5_7
+    if (buttonQ3.hitTest() && combineState === "VideoOM3_4&VideoOM2_3_4" && frameCount > 5) {
+        globalState = "VideoOM5_7";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Latein";
+        buttonQ2.text = "Italienisch";
+        buttonQ3.text = "Griechisch";
+
+        combineState = "VideoOM6_7&VideoOM5_7";
+    }
+
+
+
+
+
+    //VideoOM6_7 & VideoOM5_7 -> Q1 -> VideoOM8_10
+    if (buttonQ1.hitTest() && combineState === "VideoOM6_7&VideoOM5_7" && frameCount > 5) {
+        globalState = "VideoOM8_10";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ich verlor meine Sehkraft.";
+        buttonQ2.text = "Mein Vater starb.";
+        buttonQ3.text = "Herzog Alfonso I. verstarb.";
+
+        combineState = "VideoOM8_10&VideoOM9_10";
+    }
+
+    //VideoOM6_7 & VideoOM5_7 -> Q2 -> VideoOM9_10
+    if (buttonQ2.hitTest() && combineState === "VideoOM6_7&VideoOM5_7" && frameCount > 5) {
+        globalState = "VideoOM8_10";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ich verlor meine Sehkraft.";
+        buttonQ2.text = "Mein Vater starb.";
+        buttonQ3.text = "Herzog Alfonso I. verstarb.";
+
+        combineState = "VideoOM8_10&VideoOM9_10";
+    }
+
+    //VideoOM6_7 & VideoOM5_7 -> Q3 -> VideoOM9_10
+    if (buttonQ3.hitTest() && combineState === "VideoOM6_7&VideoOM5_7" && frameCount > 5) {
+        globalState = "VideoOM9_10";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ich verlor meine Sehkraft.";
+        buttonQ2.text = "Mein Vater starb.";
+        buttonQ3.text = "Herzog Alfonso I. verstarb.";
+
+        combineState = "VideoOM8_10&VideoOM9_10";
+    }    
+
+
+
+
+
+
+    //VideoOM8_10 & VideoOM9_10 -> Q1 -> VideoOM11_13
+    if (buttonQ1.hitTest() && combineState === "VideoOM8_10&VideoOM9_10" && frameCount > 5) {
+        globalState = "VideoOM11_13";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
+
+        combineState = "VideoOM11_13&VideoOM12_13";
+    }
+
+    //VideoOM8_10 & VideoOM9_10 -> Q2 -> VideoOM12_13
+    if (buttonQ2.hitTest() && combineState === "VideoOM8_10&VideoOM9_10" && frameCount > 5) {
+        globalState = "VideoOM12_13";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
+
+        combineState = "VideoOM11_13&VideoOM12_13";
+    }
+
+    //VideoOM8_10 & VideoOM9_10 -> Q3 -> VideoOM11_13
+    if (buttonQ3.hitTest() && combineState === "VideoOM8_10&VideoOM9_10" && frameCount > 5) {
+        globalState = "VideoOM11_13";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
+
+        combineState = "VideoOM11_13&VideoOM12_13";
     }
 
 
@@ -558,9 +1319,301 @@ function mouseClicked(){
 
 
 
+    //VideoOM11_13 & VideoOM12_13 -> Q1 -> VideoOM14
+    if (buttonQ1.hitTest() && combineState === "VideoOM11_13&VideoOM12_13" && frameCount > 5) {
+        globalState = "VideoOM14";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
 
+        combineState = "VideoOM14";
+    }
 
+    //VideoOM11_13 & VideoOM12_13 -> Q2 -> VideoOM14
+    if (buttonQ1.hitTest() && combineState === "VideoOM11_13&VideoOM12_13" && frameCount > 5) {
+        globalState = "VideoOM14";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
+
+        combineState = "VideoOM14";
+    }
     
+    //VideoOM11_13 & VideoOM12_13 -> Q3 -> VideoOM14
+    if (buttonQ1.hitTest() && combineState === "VideoOM11_13&VideoOM12_13" && frameCount > 5) {
+        globalState = "VideoOM14";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
+
+        combineState = "VideoOM14";
+    }
+
+
+
+
+
+
+    //VideoOM14 -> Q1 -> VideoOM15
+    if (buttonQ1.hitTest() && combineState === "VideoOM14" && frameCount > 5) {
+        globalState = "VideoOM15";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Sende Applaus.";
+
+        combineState = "VideoOM15";
+    }    
+
+    //VideoOM15 -> Q1 -> VideoOM16
+    if (buttonQ1.hitTest() && combineState === "VideoOM15" && frameCount > 5) {
+        globalState = "VideoOM16";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ja.";
+        buttonQ2.text = "Nein.";
+
+        combineState = "VideoOM16";
+    }    
+
+
+
+
+
+     //VideoOM16 -> Q1 -> VideoOM17_19
+     if (buttonQ1.hitTest() && combineState === "VideoOM16" && frameCount > 5) {
+        globalState = "VideoOM17_19";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ja.";
+        buttonQ2.text = "Nein.";
+
+        combineState = "VideoOM17_19&VideoOM18_19";
+    }   
+
+
+     //VideoOM16 -> Q2 -> VideoOM18_19
+     if (buttonQ2.hitTest() && combineState === "VideoOM16" && frameCount > 5) {
+        globalState = "VideoOM18_19";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ja.";
+        buttonQ2.text = "Nein.";
+
+        combineState = "VideoOM17_19&VideoOM18_19";
+    }   
+
+
+
+
+
+
+     //VideoOM17_19 & VideoOM18_19 -> Q1 -> VideoOM20_22
+     if (buttonQ1.hitTest() && combineState === "VideoOM17_19&VideoOM18_19" && frameCount > 5) {
+        globalState = "VideoOM20_22";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Lateinische Schrift auf Deutsch übersetzen.";
+        buttonQ2.text = "Überspringen.";
+
+        combineState = "VideoOM20_22&VideoOM21_22";
+    }   
+
+     //VideoOM17_19 & VideoOM18_19 -> Q2 -> VideoOM21_22
+     if (buttonQ2.hitTest() && combineState === "VideoOM17_19&VideoOM18_19" && frameCount > 5) {
+        globalState = "VideoOM21_22";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Lateinische Schrift auf Deutsch übersetzen.";
+        buttonQ2.text = "Überspringen.";
+
+        combineState = "VideoOM20_22&VideoOM21_22";
+    }   
+
+
+
+
+
+     //VideoOM20_22 & VideoOM21_22 -> Q1 -> VideoOM23
+     if (buttonQ1.hitTest() && combineState === "VideoOM20_22&VideoOM21_22" && frameCount > 5) {
+        globalState = "VideoOM23";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Ja bitte.";
+        buttonQ2.text = "Nein danke.";
+
+        combineState = "VideoOM23";
+    }   
+
+     //VideoOM23 -> Q1 -> VideoOM23_24
+     if (buttonQ1.hitTest() && combineState === "VideoOM23" && frameCount > 5) {
+        globalState = "VideoOM23_24";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
+        buttonQ2.text = "Art und Weise des Handwerks.";
+
+        combineState = "VideoOM23_24&VideoOM24";
+    }   
+
+     //VideoOM23 -> Q2 -> VideoOM24
+     if (buttonQ2.hitTest() && combineState === "VideoOM23" && frameCount > 5) {
+        globalState = "VideoOM24";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
+        buttonQ2.text = "Art und Weise des Handwerks.";
+
+        combineState = "VideoOM23_24&VideoOM24";
+    }   
+    
+     //VideoOM20_22 & VideoOM21_22 -> Q2 -> VideoOM24
+     if (buttonQ2.hitTest() && combineState === "VideoOM20_22&VideoOM21_22" && frameCount > 5) {
+        globalState = "VideoOM24";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
+        buttonQ2.text = "Art und Weise des Handwerks.";
+
+        combineState = "VideoOM23_24&VideoOM24";
+    }   
+
+
+
+
+     //VideoOM23_24 & VideoOM24 -> Q1 -> VideoOM11_26
+     if (buttonQ1.hitTest() && combineState === "VideoOM23_24&VideoOM24" && frameCount > 5) {
+        globalState = "VideoOM11_26";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Granit.";
+        buttonQ2.text = "Marmor.";
+        buttonQ3.text = "Quarz.";
+
+        combineState = "VideoOM11_26&VideoOM25_26";
+    }   
+
+     //VideoOM23_24 & VideoOM24 -> Q2 -> VideoOM25_26
+     if (buttonQ2.hitTest() && combineState === "VideoOM23_24&VideoOM24" && frameCount > 5) {
+        globalState = "VideoOM25_26";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Granit.";
+        buttonQ2.text = "Marmor.";
+        buttonQ3.text = "Quarz.";
+
+        combineState = "VideoOM11_26&VideoOM25_26";
+    }   
+
+
+
+
+
+     //VideoOM11_26 & VideoOM25_26 -> Q1 -> VideoOM28_29
+     if (buttonQ1.hitTest() && combineState === "VideoOM11_26&VideoOM25_26" && frameCount > 5) {
+        globalState = "VideoOM28_29";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Evangelisch.";
+        buttonQ2.text = "Katholisch.";
+
+        combineState = "VideoOM27_29&VideoOM28_29";
+    }       
+
+     //VideoOM11_26 & VideoOM25_26 -> Q2 -> VideoOM27_29
+     if (buttonQ2.hitTest() && combineState === "VideoOM11_26&VideoOM25_26" && frameCount > 5) {
+        globalState = "VideoOM27_29";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Evangelisch.";
+        buttonQ2.text = "Katholisch.";
+
+        combineState = "VideoOM27_29&VideoOM28_29";
+    }           
+
+     //VideoOM11_26 & VideoOM25_26 -> Q3 -> VideoOM28_29
+     if (buttonQ3.hitTest() && combineState === "VideoOM11_26&VideoOM25_26" && frameCount > 5) {
+        globalState = "VideoOM28_29";
+        frameCount = 0;
+        
+        VideoOMX.play();
+        
+        buttonQ1.text = "Evangelisch.";
+        buttonQ2.text = "Katholisch.";
+
+        combineState = "VideoOM27_29&VideoOM28_29";
+    }     
+
+
+
+
+     //VideoOM27_29 & VideoOM28_29 -> Q1 -> VideoOM31_32
+     if (buttonQ1.hitTest() && combineState === "VideoOM27_29&VideoOM28_29" && frameCount > 5) {
+        globalState = "VideoOM31_32";
+        frameCount = 0;
+        
+        VideoOMX.play();
+
+        buttonQ1.text = "Auf Wiedersehen!";
+
+        combineState = "VideoOM30_32&VideoOM31_32";
+    }     
+
+     //VideoOM27_29 & VideoOM28_29 -> Q2 -> VideoOM30_32
+     if (buttonQ2.hitTest() && combineState === "VideoOM27_29&VideoOM28_29" && frameCount > 5) {
+        globalState = "VideoOM30_32";
+        frameCount = 0;
+        
+        VideoOMX.play();
+
+        buttonQ1.text = "Auf Wiedersehen!";
+
+        combineState = "VideoOM30_32&VideoOM31_32";
+    }     
+
+
+
+     //VideoOM30_32 & VideoOM31_32 -> Q1 -> progress
+     if (buttonQ1.hitTest() && combineState === "VideoOM30_32&VideoOM31_32" && frameCount > 5) {
+        globalState = "progress";
+        frameCount = 0;
+        combineState = "null";
+        buttonCheck1.state = "pCheck";
+    }        
+
     /*
     if (buttonQ2.hitTest() && globalState === "call1" && frameCount > 450) {
         globalState = "progress";
@@ -568,6 +1621,22 @@ function mouseClicked(){
         buttonCheck1.state = "pCheck";
     }
     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -788,16 +1857,153 @@ function draw(){
         background.state = "phoneMenu4";
     }
 
-    if(globalState === "call1"){
-        phoneCall1Screen();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if(globalState === "VideoOM1"){
+        VideoOM1Screen();
         background.state = "phoneMenu1";
     }
 
-    if(globalState === "call2"){
-        phoneCall2Screen();
+    if(globalState === "VideoOM2_3_4"){
+        VideoOM2_3_4Screen();
         background.state = "phoneMenu1";
     }
 
+    if(globalState === "VideoOM3_4"){
+        VideoOM3_4Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM5_7"){
+        VideoOM5_7Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM6_7"){
+        VideoOM6_7Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM8_10"){
+        VideoOM8_10Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM9_10"){
+        VideoOM9_10Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM11_13"){
+        VideoOM11_13Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM12_13"){
+        VideoOM12_13Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM14"){
+        VideoOM14Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM15"){
+        VideoOM15Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM16"){
+        VideoOM16Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM17_19"){
+        VideoOM17_19Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM18_19"){
+        VideoOM18_19Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM20_22"){
+        VideoOM20_22Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM21_22"){
+        VideoOM21_22Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM23"){
+        VideoOM23Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM23_24"){
+        VideoOM23_24Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM24"){
+        VideoOM24Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM11_26"){
+        VideoOM11_26Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM25_26"){
+        VideoOM25_26Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM27_29"){
+        VideoOM27_29Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM28_29"){
+        VideoOM28_29Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM30_32"){
+        VideoOM30_32Screen();
+        background.state = "phoneMenu1";
+    }
+
+    if(globalState === "VideoOM31_32"){
+        VideoOM31_32Screen();
+        background.state = "phoneMenu1";
+    }
+
+
+
+
+
+    
     if(globalState === "settings"){
         settingsScreen();
         background.state = "settings";
