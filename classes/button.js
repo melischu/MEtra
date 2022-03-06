@@ -40,7 +40,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -51,7 +50,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -62,7 +60,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -73,7 +70,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -84,7 +80,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 1.75, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -95,7 +90,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -143,7 +137,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -165,7 +158,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -176,7 +168,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -197,7 +188,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -208,7 +198,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 15);
         }
@@ -219,7 +208,6 @@ export default class Button {
             fill(this.textColor);
             textAlign(CENTER);
             textStyle(NORMAL);
-            textFont("Helvetica");
             textSize(this.s * this.textSize);
             text(this.text, this.s * this.x + this.s * this.w / 2, this.s * this.y + this.s * this.h / 2 + 10);
         }
