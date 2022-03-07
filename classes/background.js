@@ -8,6 +8,7 @@ export default class Background {
         this.tut2 = images.tut2;
         this.tut3 = images.tut3;
         this.tut4 = images.tut4;
+        this.tut5 = images.tut5;
         this.home = images.home;
         this.progress = images.progress;
         this.art1 = images.art1;
@@ -36,6 +37,10 @@ export default class Background {
 
         if (this.state === "tut4"){
             image(this.tut4, this.s * this.x, this.s * this.y, this.s * 1170, this.s * 2532);
+        }
+
+        if (this.state === "tut5"){
+            image(this.tut5, this.s * this.x, this.s * this.y, this.s * 1170, this.s * 2532);
         }
 
         if (this.state === "home"){

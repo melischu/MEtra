@@ -133,43 +133,43 @@ export default class Button {
 
         if (this.state === "n1"){
             noStroke();
-            image(this.buttonName1, this.s * this.x, this.s * this.y, this.s * 580, this.s * 150);
+            image(this.buttonName1, this.s * this.x, this.s * this.y, this.s * 770, this.s * 150);
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 4.5, this.s * this.y + this.s * this.h / 2 + 15);
         }
         
         if (this.state === "n2"){
             noStroke();
-            image(this.buttonName2, this.s * this.x, this.s * this.y, this.s * 580, this.s * 150);
+            image(this.buttonName2, this.s * this.x, this.s * this.y, this.s * 770, this.s * 150);
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
             textFont("Helvetica");
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 4.5, this.s * this.y + this.s * this.h / 2 + 15);
         }
 
         if (this.state === "n3"){
             noStroke();
-            image(this.buttonName3, this.s * this.x, this.s * this.y, this.s * 580, this.s * 150);
+            image(this.buttonName3, this.s * this.x, this.s * this.y, this.s * 770, this.s * 150);
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 4.5, this.s * this.y + this.s * this.h / 2 + 15);
         }
 
         if (this.state === "n4"){
             noStroke();
-            image(this.buttonName4, this.s * this.x, this.s * this.y, this.s * 580, this.s * 150);
+            image(this.buttonName4, this.s * this.x, this.s * this.y, this.s * 770, this.s * 150);
             fill(this.textColor);
             textAlign(LEFT);
             textStyle(NORMAL);
             textSize(this.s * this.textSize);
-            text(this.text, this.s * this.x + this.s * this.w / 4, this.s * this.y + this.s * this.h / 2 + 15);
+            text(this.text, this.s * this.x + this.s * this.w / 4.5, this.s * this.y + this.s * this.h / 2 + 15);
         }
 
         if (this.state === "pCheck"){

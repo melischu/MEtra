@@ -37,6 +37,7 @@ let images = {
     tut2: loadImage("./assets/img/tut2.png"),
     tut3: loadImage("./assets/img/tut3.png"),
     tut4: loadImage("./assets/img/tut4.png"),
+    tut5: loadImage("./assets/img/tut5.png"),
     home: loadImage("./assets/img/home.png"),
     progress: loadImage("./assets/img/progress.png"),
     settings: loadImage("./assets/img/settings.png"),
@@ -86,14 +87,14 @@ let buttonAccept = new Button(850, 2170, 200, 200, 1, 50, color(255, 255, 255), 
 let buttonDecline = new Button(120, 2170, 200, 200, 1, 50, color(255, 255, 255), "", "decline", images);
 let buttonTransparent1 = new Button(920, 2260, 150, 150, 1, 50, color(255, 255, 255), "", "transparent", images);
 let buttonTransparent2 = new Button(100, 2260, 150, 150, 1, 50, color(255, 255, 255), "", "transparent", images);
-let buttonName1 = new Button(120, 680, 580, 150, 1, 50, color(255, 255, 255), "O. Morata", "n1", images);
-let buttonName2 = new Button(120, 880, 580, 150, 1, 50, color(255, 255, 255), "H. Durlacher", "n2", images);
-let buttonName3 = new Button(120, 1080, 580, 150, 1, 50, color(255, 255, 255), "F. Gundolf", "n3", images);
-let buttonName4 = new Button(120, 1280, 580, 150, 1, 50, color(255, 255, 255), "G. E. Lessing", "n4", images);
-let buttonCheck1 = new Button(900, 680, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
-let buttonCheck2 = new Button(900, 880, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
-let buttonCheck3 = new Button(900, 1080, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
-let buttonCheck4 = new Button(900, 1280, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
+let buttonName1 = new Button(120, 890, 580, 150, 1, 50, color(255, 255, 255), "O. Morata", "n1", images);
+let buttonName2 = new Button(120, 1340, 580, 150, 1, 50, color(255, 255, 255), "H. Durlacher", "n2", images);
+let buttonName3 = new Button(120, 1790, 580, 150, 1, 50, color(255, 255, 255), "F. Gundolf", "n3", images);
+let buttonName4 = new Button(120, 2240, 580, 150, 1, 50, color(255, 255, 255), "G. E. Lessing", "n4", images);
+let buttonCheck1 = new Button(900, 890, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
+let buttonCheck2 = new Button(900, 1340, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
+let buttonCheck3 = new Button(900, 1790, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
+let buttonCheck4 = new Button(900, 2240, 150, 150, 1, 50, color(255, 255, 255), "", "pCheckEmpty", images);
 let buttonQ1 = new Button(120, 1700, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
 let buttonQ2 = new Button(120, 1900, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
 let buttonQ3 = new Button(120, 2100, 940, 180, 1, 40, color(0, 0, 0), "", "q", images);
@@ -113,7 +114,7 @@ function tutorialScreen(){
     buttonTransparent2.display();
 
 
-    if (globalState === "tutorial4"){
+    if (globalState === "tutorial5"){
         button1.display();
     }
 }
@@ -721,11 +722,18 @@ function VideoOM31_32Screen(){
 
     if (frameCount > 2370){
         buttonQ1.display();
+        fill(181, 139, 93);
+        rect(0, 1900, 1170, 490);
         fill(255);
         textAlign(CENTER);
         textStyle(BOLD);
         textSize(50);
         text("Deine Antwort:", 585, 1600);
+        text("Begebe dich bitte als nächstes", 585, 2000);
+        text("zu den Stolpersteinen, um von", 585, 2080);
+        text("Hermann Durlacher Neues über", 585, 2160);
+        text("sein schrifttragendes Artefakt", 585, 2240);
+        text("zu erfahren.", 585, 2320);
         qButtonsActive = "true";
     }
 }
@@ -751,6 +759,7 @@ function settingsScreen(){
     background.display();
     buttonBack.display();
     button1.display();
+    button2.display();
 }
 
 
@@ -776,8 +785,6 @@ function mouseClicked(){
     //tutorial3 -> tutorial4
     if (buttonTransparent1.hitTest() && globalState === "tutorial3" && frameCount > 5) {
         globalState = "tutorial4";
-        button1.text = "Zum Startbildschirm";
-        button1.state = "check";
         frameCount = 0;
     }
 
@@ -785,10 +792,25 @@ function mouseClicked(){
     if (buttonTransparent2.hitTest() && globalState === "tutorial3" && frameCount > 5) {
         globalState = "tutorial2";
         frameCount = 0;
+    }    
+
+    //tutorial4 -> tutorial5
+    if (buttonTransparent1.hitTest() && globalState === "tutorial4" && frameCount > 5) {
+        globalState = "tutorial5";
+        button1.y = 1900;
+        button1.text = "Zum Startbildschirm";
+        button1.state = "check";
+        frameCount = 0;
     }
 
-    //tutorial4 -> home
-    if (button1.hitTest() && globalState === "tutorial4" && frameCount > 5) {
+    //tutorial4 -> tutorial3
+    if (buttonTransparent2.hitTest() && globalState === "tutorial4" && frameCount > 5) {
+        globalState = "tutorial3";
+        frameCount = 0;
+    }
+
+    //tutorial5 -> home
+    if (button1.hitTest() && globalState === "tutorial5" && frameCount > 5) {
         globalState = "home";
         frameCount = 0;
         button1.text = "Artefakteliste";
@@ -802,9 +824,9 @@ function mouseClicked(){
         button3.state = "settings";
     }
 
-    //tutorial4 -> tutorial3
-    if (buttonTransparent2.hitTest() && globalState === "tutorial4" && frameCount > 5) {
-        globalState = "tutorial3";
+    //tutorial5 -> tutorial4
+    if (buttonTransparent2.hitTest() && globalState === "tutorial5" && frameCount > 5) {
+        globalState = "tutorial4";
         frameCount = 0;
     }
 
@@ -1823,9 +1845,12 @@ function mouseClicked(){
     if (button3.hitTest() && globalState === "home" && frameCount > 5) {
         globalState = "settings";
         frameCount = 0;
-        button1.text = "App zurücksetzen";
+        button1.text = "Fortschritte zurücksetzen";
         button1.y = 700;
         button1.state = "default";
+        button2.text = "Tutorial ansehen";
+        button2.y = 950;
+        button2.state = "default";
     }
 
     //settings -> home
@@ -1841,7 +1866,7 @@ function mouseClicked(){
         button3.text = "Einstellungen";
         button3.y = 2060;
         button3.state = "settings";    
-    }
+    } 
 
     //settings -> reset
     if (button1.hitTest() && globalState === "settings" && frameCount > 5) {
@@ -1861,6 +1886,12 @@ function mouseClicked(){
         buttonCheck3.state = "pCheckEmpty";
         buttonCheck4.state = "pCheckEmpty";
     }
+
+    //settings -> tut1
+    if (button2.hitTest() && globalState === "settings" && frameCount > 5) {
+        globalState = "tutorial1";
+        frameCount = 0;
+    }       
 }
       
 
@@ -1885,6 +1916,11 @@ function draw(){
     if(globalState === "tutorial4"){
         tutorialScreen();
         background.state = "tut4";
+    }
+
+    if(globalState === "tutorial5"){
+        tutorialScreen();
+        background.state = "tut5";
     }
 
     if(globalState === "home"){
