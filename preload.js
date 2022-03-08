@@ -25,6 +25,11 @@ export let VideoOM28_29;
 export let VideoOM30_32;
 export let VideoOM31_32;
 export let poppins;
+export let rightSound;
+export let qSound;
+export let clapSound;
+export let ringSound;
+
 
 export function preload(){
     VideoOM1 = createVideo("./assets/vid/VideoOM1.mp4");
@@ -54,5 +59,10 @@ export function preload(){
     VideoOM30_32 = createVideo("./assets/vid/VideoOM30_32.mp4");
     VideoOM31_32 = createVideo("./assets/vid/VideoOM31_32.mp4");
     
-    poppins = loadFont("./assets/fonts/Poppins-Medium.ttf")
+    poppins = loadFont("./assets/fonts/Poppins-Medium.ttf");
+
+    rightSound = loadSound("./assets/sound/right.wav");
+    qSound = loadSound("./assets/sound/q.wav");
+    clapSound = loadSound("./assets/sound/clap.mp3");
+    ringSound = loadSound("./assets/sound/ring.mp3");
 }

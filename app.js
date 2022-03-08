@@ -28,7 +28,11 @@ import {
     VideoOM30_32,
     VideoOM31_32,
     poppins,
-    preload 
+    preload,
+    rightSound,
+    qSound,
+    clapSound,
+    ringSound,
 } from "./preload.js";
 
 //creating classes
@@ -273,7 +277,7 @@ function VideoOM2_3Screen(){
     image(VideoOM2_3, 0, 0, 1170, 2532);
     buttonBack.display();
 
-    if (frameCount > 3990){
+    if (frameCount > 4050){
         buttonAccept.display();
         qButtonsActive = "true";
     }
@@ -286,7 +290,7 @@ function VideoOM3Screen(){
     image(VideoOM3, 0, 0, 1170, 2532);
     buttonBack.display();
 
-    if (frameCount > 2820){
+    if (frameCount > 2850){
         buttonAccept.display();
         qButtonsActive = "true";
     }
@@ -471,8 +475,7 @@ function VideoOM16Screen(){
     image(VideoOM16, 0, 0, 1170, 2532);
     buttonBack.display();
 
-//framceCount tuauschen
-    if (frameCount > 1590){
+    if (frameCount > 1860){
         buttonQ1.display();
         buttonQ2.display();
         fill(255);
@@ -702,13 +705,20 @@ function VideoOM30_32Screen(){
     image(VideoOM30_32, 0, 0, 1170, 2532);
     buttonBack.display();
 
-    if (frameCount > 2400){
-        buttonQ1.display();
+    if (frameCount > 2670){
+        button1.display();
+        fill(181, 139, 93);
+        rect(0, 1900, 1170, 490);
         fill(255);
         textAlign(CENTER);
         textStyle(BOLD);
         textSize(50);
         text("Deine Antwort:", 585, 1600);
+        text("Begebe dich bitte als nächstes", 585, 2000);
+        text("zu den Stolpersteinen, um von", 585, 2080);
+        text("Hermann Durlacher Neues über", 585, 2160);
+        text("sein schrifttragendes Artefakt", 585, 2240);
+        text("zu erfahren.", 585, 2320);
         qButtonsActive = "true";
     }
 }
@@ -720,8 +730,8 @@ function VideoOM31_32Screen(){
     image(VideoOM31_32, 0, 0, 1170, 2532);
     buttonBack.display();
 
-    if (frameCount > 2370){
-        buttonQ1.display();
+    if (frameCount > 2640){
+        button1.display();
         fill(181, 139, 93);
         rect(0, 1900, 1170, 490);
         fill(255);
@@ -946,24 +956,28 @@ function mouseClicked(){
     if (button2.hitTest() && globalState === "art1" && frameCount > 5) {
         globalState = "phoneMenu1";
         frameCount = 0;
+        ringSound.play();
     }
 
     //art2 -> phoneMenu2
     if (button2.hitTest() && globalState === "art2" && buttonCheck1.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu2";
         frameCount = 0;
+        ringSound.play();
     }
 
     //art3 -> phoneMenu3
     if (button2.hitTest() && globalState === "art3" && buttonCheck2.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu3";
         frameCount = 0;
+        ringSound.play();
     }
 
     //art4 -> phoneMenu4
     if (button2.hitTest() && globalState === "art4" && buttonCheck3.state === "pCheck" && frameCount > 5) {
         globalState = "phoneMenu4";
         frameCount = 0;
+        ringSound.play();
     }
 
     //phoneMenu1 -> art1
@@ -976,9 +990,9 @@ function mouseClicked(){
         button2.text = "Artefakt anrufen";
         button2.y = 2000;
         button2.state = "call";
+        ringSound.stop();
     }
 
-    //LOCK
     //phoneMenu2 -> art2
     if (buttonDecline.hitTest() && globalState === "phoneMenu2" && frameCount > 5) {
         globalState = "art2";
@@ -989,6 +1003,7 @@ function mouseClicked(){
         button2.text = "Artefakt anrufen";
         button2.y = 2000;
         button2.state = "call";
+        ringSound.stop();
     }
     
     //phoneMenu3 -> art3
@@ -1001,6 +1016,7 @@ function mouseClicked(){
         button2.text = "Artefakt anrufen";
         button2.y = 2000;
         button2.state = "call";
+        ringSound.stop();
     }
     
     //phoneMenu4 -> art4
@@ -1013,6 +1029,7 @@ function mouseClicked(){
         button2.text = "Artefakt anrufen";
         button2.y = 2000;
         button2.state = "call";
+        ringSound.stop();
     }    
 
     //phoneMenu1 -> VideoOM1
@@ -1021,6 +1038,7 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM1.play();
+        ringSound.stop();
         
         buttonQ1.text = "Oh ja, erzähl mir mehr über dich!";
         buttonQ2.text = "Was genau sind schrifttragende Artefakte?";
@@ -1034,6 +1052,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM3.play();
+        qSound.setVolume(0.25);
+        qSound.play();
 
         buttonQ1.text = "1555";
         buttonQ2.text = "1955";
@@ -1049,6 +1069,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM2_3.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "1555";
         buttonQ2.text = "1955";
@@ -1070,6 +1092,8 @@ function mouseClicked(){
         button2.state = "call";
 
         VideoOM1.stop();
+        qSound.stop();
+        rightSound.stop();        
     }
 
 
@@ -1098,6 +1122,8 @@ function mouseClicked(){
 
         VideoOM3.stop();
         VideoOM2_3.stop();
+        qSound.stop();
+        rightSound.stop();  
     }    
     
     
@@ -1108,6 +1134,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM6_7.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Latein";
         buttonQ2.text = "Italienisch";
@@ -1123,6 +1151,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM5_7.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Latein";
         buttonQ2.text = "Italienisch";
@@ -1138,6 +1168,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM5_7.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Latein";
         buttonQ2.text = "Italienisch";
@@ -1159,6 +1191,8 @@ function mouseClicked(){
         button2.state = "call";
 
         VideoOM4.stop();
+        qSound.stop();
+        rightSound.stop();  
     }    
 
 
@@ -1169,6 +1203,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM8_10.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Ich verlor meine Sehkraft.";
         buttonQ2.text = "Mein Vater starb.";
@@ -1184,6 +1220,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM9_10.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Ich verlor meine Sehkraft.";
         buttonQ2.text = "Mein Vater starb.";
@@ -1199,6 +1237,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM8_10.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Ich verlor meine Sehkraft.";
         buttonQ2.text = "Mein Vater starb.";
@@ -1221,6 +1261,8 @@ function mouseClicked(){
 
         VideoOM6_7.stop();
         VideoOM5_7.stop();
+        qSound.stop();
+        rightSound.stop();  
     }        
 
 
@@ -1231,6 +1273,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM11_13.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
 
@@ -1244,6 +1288,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM12_13.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
 
@@ -1257,6 +1303,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM11_13.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Zauber mir ein Lächeln ins Gesicht.";
 
@@ -1277,6 +1325,8 @@ function mouseClicked(){
 
         VideoOM8_10.stop();
         VideoOM9_10.stop();
+        qSound.stop();
+        rightSound.stop();  
     }   
 
 
@@ -1287,6 +1337,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM14.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
 
@@ -1300,6 +1352,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM14.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
 
@@ -1313,6 +1367,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM14.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Sende Olympia Kraft und Hoffnung.";
 
@@ -1333,6 +1389,8 @@ function mouseClicked(){
 
         VideoOM11_13.stop();
         VideoOM12_13.stop();
+        qSound.stop();
+        rightSound.stop();  
     }   
 
 
@@ -1343,6 +1401,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM15.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Sende Applaus.";
 
@@ -1362,6 +1422,8 @@ function mouseClicked(){
         button2.state = "call";
 
         VideoOM14.stop();
+        qSound.stop();
+        rightSound.stop();  
     }  
     
     
@@ -1372,6 +1434,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM16.play();
+        clapSound.setVolume(0.25);
+        clapSound.play();
         
         buttonQ1.text = "Ja.";
         buttonQ2.text = "Nein.";
@@ -1392,6 +1456,9 @@ function mouseClicked(){
         button2.state = "call";
 
         VideoOM15.stop();
+        qSound.stop();
+        rightSound.stop(); 
+        clapSound.stop(); 
     }  
 
 
@@ -1402,6 +1469,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM17_19.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Ja.";
         buttonQ2.text = "Nein.";
@@ -1417,6 +1486,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM18_19.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Ja.";
         buttonQ2.text = "Nein.";
@@ -1437,6 +1508,8 @@ function mouseClicked(){
         button2.state = "call";
 
         VideoOM16.stop();
+        qSound.stop();
+        rightSound.stop();  
     }  
 
 
@@ -1447,6 +1520,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM20_22.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Lateinische Schrift auf Deutsch übersetzen.";
         buttonQ2.text = "Überspringen.";
@@ -1461,6 +1536,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM21_22.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Lateinische Schrift auf Deutsch übersetzen.";
         buttonQ2.text = "Überspringen.";
@@ -1482,6 +1559,8 @@ function mouseClicked(){
 
         VideoOM17_19.stop();
         VideoOM18_19.stop();
+        qSound.stop();
+        rightSound.stop();  
     }   
 
 
@@ -1492,6 +1571,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM23.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Ja bitte.";
         buttonQ2.text = "Nein danke.";
@@ -1506,6 +1587,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM23_24.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
         buttonQ2.text = "Art und Weise des Handwerks.";
@@ -1520,6 +1603,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM24.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
         buttonQ2.text = "Art und Weise des Handwerks.";
@@ -1534,6 +1619,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM24.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Dauerhaftigkeit und symbolische Funktion.";
         buttonQ2.text = "Art und Weise des Handwerks.";
@@ -1555,6 +1642,8 @@ function mouseClicked(){
 
         VideoOM20_22.stop();
         VideoOM21_22.stop();
+        qSound.stop();
+        rightSound.stop();  
     }       
 
     //VideoOM23 -> back -> art1Screen
@@ -1579,6 +1668,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM11_26.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Granit.";
         buttonQ2.text = "Marmor.";
@@ -1594,6 +1685,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM25_26.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Granit.";
         buttonQ2.text = "Marmor.";
@@ -1616,6 +1709,8 @@ function mouseClicked(){
 
         VideoOM23_24.stop();
         VideoOM24.stop();
+        qSound.stop();
+        rightSound.stop();  
     }           
 
 
@@ -1626,6 +1721,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM28_29.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Evangelisch.";
         buttonQ2.text = "Katholisch.";
@@ -1640,6 +1737,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM27_29.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
         
         buttonQ1.text = "Evangelisch.";
         buttonQ2.text = "Katholisch.";
@@ -1654,6 +1753,8 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM28_29.play();
+        qSound.setVolume(0.25);
+        qSound.play();
         
         buttonQ1.text = "Evangelisch.";
         buttonQ2.text = "Katholisch.";
@@ -1675,6 +1776,8 @@ function mouseClicked(){
 
         VideoOM11_26.stop();
         VideoOM25_26.stop();
+        qSound.stop();
+        rightSound.stop();  
     }  
 
 
@@ -1685,8 +1788,12 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM31_32.play();
+        rightSound.setVolume(0.33);
+        rightSound.play();
 
-        buttonQ1.text = "Auf Wiedersehen!";
+        button1.y = 1710;
+        button1.state = "default";
+        button1.text = "Auf Wiedersehen!";
 
         combineState = "VideoOM30_32&VideoOM31_32";
         qButtonsActive = "false";
@@ -1698,8 +1805,12 @@ function mouseClicked(){
         frameCount = 0;
         
         VideoOM30_32.play();
-
-        buttonQ1.text = "Auf Wiedersehen!";
+        qSound.setVolume(0.25);
+        qSound.play();
+        
+        button1.y = 1710;
+        button1.state = "default";
+        button1.text = "Auf Wiedersehen!";
 
         combineState = "VideoOM30_32&VideoOM31_32";
         qButtonsActive = "false";
@@ -1718,12 +1829,14 @@ function mouseClicked(){
 
         VideoOM27_29.stop();
         VideoOM28_29.stop();
+        qSound.stop();
+        rightSound.stop();  
     }  
         
 
 
      //VideoOM30_32 & VideoOM31_32 -> Q1 -> progress
-     if (buttonQ1.hitTest() && combineState === "VideoOM30_32&VideoOM31_32" && frameCount > 5 && qButtonsActive === "true") {
+     if (button1.hitTest() && combineState === "VideoOM30_32&VideoOM31_32" && frameCount > 5 && qButtonsActive === "true") {
         globalState = "progress";
         frameCount = 0;
         combineState = "null";
@@ -1744,6 +1857,8 @@ function mouseClicked(){
 
         VideoOM30_32.stop();
         VideoOM31_32.stop();
+        qSound.stop();
+        rightSound.stop();  
     }
 
 
