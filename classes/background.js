@@ -86,10 +86,5 @@ export default class Background {
         if (this.state === "settings"){
             image(this.settings, this.s * this.x, this.s * this.y, this.s * 1170, this.s * 2532);
         }
-
-        if (this.state === "black"){
-            fill(0);
-            rect(this.s * this.x, this.s * this.y, this.s * 1170, this.s * 2532);
-        }
     }
 }
