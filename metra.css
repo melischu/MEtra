@@ -12,3 +12,7 @@ h1{
 #metra {
   text-align: center;
 }
+
+video {
+  display: none;
+}
